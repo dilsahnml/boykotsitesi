@@ -1,26 +1,90 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kayıt Ol</title>
     <link rel="stylesheet" href="style2.css">
+    <style>
+        /* style2.css içeriği buraya gelebilir veya ayrı bir dosyada kalabilir */
+        /* Aşağıdaki stil, mobil menü için önceki HTML'den alınmıştır, gerekirse style2.css'e taşıyın */
+        .navbar .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .navbar .menu-toggle span {
+            height: 3px;
+            background: khaki;
+            transition: .3s;
+        }
+
+        .navbar .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .navbar .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                background: rgba(5, 5, 5, 0.941);
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .navbar ul li {
+                margin: 0;
+            }
+
+            .navbar ul li a {
+                padding: 15px;
+                display: block;
+            }
+
+            .navbar .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="navbar">
-        <div class="logo">
-            <a href="index.html">ANA SAYFA</a>
+            <div class="logo">
+                <a href="index.html">ANA SAYFA</a>
+            </div>
+            </div>
+        <div class="signup-form">
+            <form action="Kayıt Ol.html">
+                <h1>Kayıt Ol</h1>
+                <input type="text" placeholder="İsim Soyisim" class="txt">
+                <input type="email" placeholder="Email" class="txt">
+                <input type="password" placeholder="Şifre" class="txt">
+                <input type="submit" value="Kayıt Ol" class="signup-btn">
+                <a href="Giriş Yap.html">Zaten Bir Hesabınız Var Mı?</a>
+                </form>
+        </div>
     </div>
-    <div class="signup-form">
-        <form action="Kayıt Ol.html">
-        <h1>Kayıt Ol</h1>
-        <input type="text" placeholder="İsim Soyisim" class="txt">
-        <input type="text" placeholder="Email" class="txt">
-        <input type="text" placeholder="Şifre" class="txt">
-        <input type="submit" value="Kayıt Ol" class="signup-btn">
-        <a href="Giriş Yap.html">Zaten Bir Hesabınız Var Mı?</a>
-    
-</body>
+
+    </body>
 </html>
