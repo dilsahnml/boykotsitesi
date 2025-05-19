@@ -1,30 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basit Web Sitesi-1</title>
+    <title>Boykot Sitesine Hoş Geldiniz</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Mobil menü için CSS (stil.css dosyanızda da olabilir) */
+        .navbar .menu-toggle {
+            display: none; /* Başlangıçta gizli */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .navbar .menu-toggle span {
+            height: 3px;
+            background: khaki;
+            transition: .3s;
+        }
+
+        .navbar .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .navbar .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none; /* Mobil görünümde menüyü gizle */
+                flex-direction: column;
+                background: rgba(5, 5, 5, 0.941);
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar ul.active {
+                display: flex; /* Aktif olduğunda menüyü göster */
+            }
+
+            .navbar ul li {
+                margin: 0;
+            }
+
+            .navbar ul li a {
+                padding: 15px;
+                display: block;
+            }
+
+            .navbar .menu-toggle {
+                display: flex; /* Mobil görünümde göster */
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="navbar">
-        <div class="logo">
-            <a href="index.html">ANA SAYFA</a>
-    </div>
-    <ul>
-        <li><a href="boykot nedir.html">Boykot Nedir?</a></li>
-        <li><a href="boykot deneme.html">Boykot Markalar ve Ürünler</a></li>
-    </ul>
+            <div class="logo">
+                <a href="index.html">ANA SAYFA</a>
+            </div>
+            <ul class="menu">
+                <li><a href="boykot nedir.html">Boykot Nedir?</a></li>
+                <li><a href="boykot deneme.html">Boykot Markalar ve Ürünler</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
         <div class="center">
             <h1>Boykot Sitesine</h1>
             <h2>HOŞGELDİNİZ</h2>
             <div class="buttons">
-                <button><a href="Kayıt Ol.html">Kayıt Ol</a></button>
+                <button><a href="kayıt ol.html">Kayıt Ol</a></button>
                 <button><a href="Giriş Yap.html">Giriş Yap</a></button>
             </div>
         </div>
-        <a href="file:///C:/Users/dilsa/OneDrive/Masa%C3%BCst%C3%BC/basit%20web%20sitesi/kay%C4%B1t%20ol.html" class="button"></a>
+        </div>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
