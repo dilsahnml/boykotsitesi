@@ -1,8 +1,8 @@
 *{
     margin: 0;
+    box-sizing: border-box;
     padding: 0;
 }
-
 
 .container{
     background: url(boykot\ arkaplan.jpg);
@@ -35,10 +35,10 @@
 }
 
 .navbar ul li{
-list-style: none;
-display: inline-block;
-margin: 0 8px;
-line-height: 80px;
+    list-style: none;
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
 }
 
 .navbar ul li a{
@@ -60,8 +60,8 @@ line-height: 80px;
     position:absolute;
     top: 25%;
     left: 5%;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   user-select: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    user-select: none;
 }
 
 .center h1{
@@ -69,7 +69,6 @@ line-height: 80px;
     font-size: 70px;
     font-weight: bold;
     width:900px;
-
 }
 
 .center h2{
@@ -78,7 +77,6 @@ line-height: 80px;
     font-weight: bold;
     width: 885px;
     margin-top: 10px;
-    
 }
 
 .buttons button{
@@ -97,16 +95,14 @@ line-height: 80px;
 
 .buttond button:hover{
     background: #fff;
-
-
 }
- 
+
 .container .center{
     position: absolute;
     top: 25%;
     left: 5%;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   user-select: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    user-select: none;
 }
 
 .center h3{
@@ -122,12 +118,79 @@ line-height: 80px;
     font-family: initial;
     width: 400px;
     margin-top: 10px;
-    
-    
 }
 
 body{
     margin: 0;
     padding: 0;
     background: #ff6e00;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .container {
+        background-size: cover;
+        height: auto;
+    }
+
+    .navbar {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar .logo {
+        margin: 10px 0;
+    }
+
+    .navbar ul {
+        float: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar ul li {
+        display: block;
+        line-height: 50px;
+        margin: 0;
+    }
+
+    .navbar ul li a {
+        font-size: 18px;
+        padding: 10px;
+        display: block;
+    }
+
+    .container .center {
+        position: static;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .center h1,
+    .center h2,
+    .center h3,
+    .center h4 {
+        width: 100%;
+        font-size: 5vw;
+    }
+
+    .center h4 {
+        font-size: 4vw;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .buttons button {
+        width: 80%;
+        font-size: 16px;
+    }
 }
